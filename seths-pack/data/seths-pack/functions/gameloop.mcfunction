@@ -9,6 +9,8 @@
 #The below function contains all of the 'core' functions for your datapack
 function seths-pack:core
 
+# Projectile / Fireball
+function seths-pack:add-ons/projectile_trigger
 
 #An example of an 'add-on' files
 #function seths-pack:required/glowing-zombies
