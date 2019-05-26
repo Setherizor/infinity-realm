@@ -9,9 +9,9 @@ execute as @a[scores={shoot=1}] run function seths-pack:add-ons/projectile
 execute as @e[tag=go,tag=!init] at @s facing entity @e[limit=1,sort=nearest,type=minecraft:bat,distance=..25] feet run tp ~ ~ ~
 
 # Movement while in air, or till hit thing or block
-execute as @e[tag=stand,tag=go,tag=!init] at @s unless entity @e[type=minecraft:bat,distance=..25] run tp ^ ^ ^-.2
+execute as @e[tag=stand,tag=go,tag=!init] at @s unless entity @e[type=minecraft:bat,distance=..25] run tp ^ ^ ^-.4
 
-execute as @e[tag=stand,tag=go,tag=!init] at @s if entity @e[type=minecraft:bat,distance=..25] run tp ^ ^ ^.2
+execute as @e[tag=stand,tag=go,tag=!init] at @s if entity @e[type=minecraft:bat,distance=..25] run tp ^ ^ ^.4
 
 # Stop moving if hit block
 execute as @e[tag=stand,tag=!init] at @s unless block ~ ~1.6 ~ minecraft:air run tag @s remove go

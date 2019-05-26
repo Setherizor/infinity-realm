@@ -6,7 +6,7 @@
 execute unless entity @e[tag=curse_scroll] run tag @e[tag=scroll,nbt={Item:{tag:{display:{Name:"{\"text\":\"CURSE\"}"}}}}] add curse_scroll
 
 # Beacon things setup
-execute at @e[tag=curse_scroll] run summon minecraft:armor_stand ~ ~25 ~ {NoGravity:1,Invisible:0,Tags:["curse_anchor"]}
+execute at @e[tag=curse_scroll] run summon minecraft:armor_stand ~ ~25 ~ {NoGravity:1,Invisible:1,Tags:["curse_anchor"]}
 
 execute at @e[tag=curse_anchor] run setblock ~10 ~ ~10 minecraft:end_gateway{Age:60l}
 execute at @e[tag=curse_anchor] run setblock ~10 ~ ~-10 minecraft:end_gateway{Age:50l}
