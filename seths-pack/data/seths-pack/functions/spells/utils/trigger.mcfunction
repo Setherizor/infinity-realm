@@ -17,6 +17,7 @@ execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"BOOM\"}"}}}}] run tag @p[distance=..10] add caster
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"CURSE\"}"}}}}] run tag @p[distance=..10] add caster
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"COLLECT\"}"}}}}] run tag @p[distance=..10] add caster
+execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"PROTECT\"}"}}}}] run tag @p[distance=..10] add caster
 
 ## Spell Conditionals TODO: home,arrows
 execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"POOF\"}"}}}}] run schedule function seths-pack:spells/poof 2s
@@ -26,6 +27,8 @@ execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"te
 execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"CURSE\"}"}}}}] run schedule function seths-pack:spells/curse 3s
 
 execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"COLLECT\"}"}}}}] run schedule function seths-pack:spells/collect 1s
+
+execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"PROTECT\"}"}}}}] run schedule function seths-pack:spells/protect 1s
 
 # Prevent Double Execution
 execute as @e[tag=scroll] run tag @s add queued
