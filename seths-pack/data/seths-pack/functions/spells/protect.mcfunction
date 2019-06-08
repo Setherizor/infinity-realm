@@ -1,4 +1,4 @@
-# Seths Datapack for Minecraft 1.14.1 Java Edition
+# Seths Datapack for Minecraft 1.14.2 Java Edition
 
 # Protect Spell
 

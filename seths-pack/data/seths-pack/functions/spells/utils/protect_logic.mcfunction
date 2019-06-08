@@ -1,4 +1,4 @@
-# Seths Datapack for Minecraft 1.14.1 Java Edition
+# Seths Datapack for Minecraft 1.14.2 Java Edition
 
 # Protect Entity Logic
 
@@ -23,7 +23,7 @@ tag @e[tag=circle,tag=seeker] remove circle
 
 # Move towards target (facing)
 execute as @e[tag=seeker] at @s anchored feet facing entity @e[tag=smitehim,distance=..30,sort=furthest] eyes if entity @e[tag=smitehim,distance=..30] run tp ^ ^ ^.3
-execute as @e[tag=seeker] at @s anchored feet facing entity @p eyes unless entity @e[tag=smitehim,distance=..30] run tp ^ ^ ^-.3
+execute as @e[tag=seeker] at @s anchored feet facing entity @p eyes unless entity @e[tag=smitehim,distance=..30] run tp ^ ^-.2 ^-.3
 
 # Particles
 execute at @e[tag=seeker] run particle minecraft:flame ^ ^ ^ .1 .1 .1 .1 6 force
@@ -35,10 +35,7 @@ execute as @e[tag=seeker] at @s if entity @e[distance=..1.7,type=!minecraft:end_
 # Ending States
 execute as @e[tag=seeker] at @s if entity @e[distance=..1.7,type=!minecraft:armor_stand] run kill @s
 execute as @e[tag=seeker] at @s unless block ~ ~ ~ minecraft:air run kill @s
-
-# execute as @e[tag=seeker] at @s unless entity @e[tag=smitehim,distance=..100] run kill @s
 execute as @e[tag=seeker] at @s unless entity @p[distance=..30] run kill @s
-
 
 # DEPRECATED SUMMONDER
 # execute at @e[type=minecraft:end_crystal,distance=..20] unless entity @e[distance=..30,tag=seeker] run summon minecraft:armor_stand ~ ~6 ~ {Tags:["seeker"],NoGravity:1,Invisible:0}

@@ -1,4 +1,4 @@
-# Seths Datapack for Minecraft 1.14.1 Java Edition
+# Seths Datapack for Minecraft 1.14.2 Java Edition
 
 # COLLECT Spell
 
@@ -6,7 +6,7 @@
 execute unless entity @e[tag=collect_scroll] run tag @e[tag=scroll,nbt={Item:{tag:{display:{Name:"{\"text\":\"COLLECT\"}"}}}}] add collect_scroll
 
 # Particles
-execute at @e[tag=collect_scroll] run particle minecraft:dripping_lava ~ ~2 ~ .7 .7 .7 5 1002 normal
+execute at @e[tag=collect_scroll] run particle minecraft:dripping_lava ~ ~2 ~ .7 .7 .7 5 600 normal
 # Kill wand so we dont activate collected spells
 execute as @e[tag=wand] run kill @s
 # Tp Items
