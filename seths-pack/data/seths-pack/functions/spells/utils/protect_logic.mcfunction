@@ -6,9 +6,9 @@
 execute at @e[tag=circle] at @p anchored eyes run tp @e[tag=circle] ~ ~5 ~
 execute as @e[tag=circle] at @s run tp @s ~ ~ ~ ~5 ~
 execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 run particle minecraft:totem_of_undying ~ ~ ~ .01 .01 .01 .05 2 force
-execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 run effect give @e[distance=...5] minecraft:glowing 1 1 true
-execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 if entity @e[distance=..1.5,type=!minecraft:item] run kill @e[distance=..1.5,type=!minecraft:item]
-execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 if entity @e[distance=..1.5,type=!minecraft:item] run kill @s
+execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 run effect give @e[distance=..1.4] minecraft:glowing 1 1 true
+execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 run effect give @e[distance=..1.4] minecraft:levitation 2 5 true
+execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 if entity @e[distance=..1.4,type=!minecraft:item] run kill @s
 
 # Trigger on jump, if holding wand
 execute at @a[scores={jump=1..}, nbt={SelectedItem:{tag:{display:{Name:'{"text":"Activator"}'}}}}] as @e[tag=circle,distance=..6,limit=1] run tag @s add seeker
@@ -16,7 +16,7 @@ execute at @a[scores={jump=1..}, nbt={SelectedItem:{tag:{display:{Name:'{"text":
 
 # Vertical Particle
 execute as @e[tag=circle,tag=seeker] at @s run tp ^ ^-2 ^2.5
-execute at @e[tag=circle,tag=seeker] run particle minecraft:flame ~ ~-1 ~ 0 1 0 .01 100 force
+execute at @e[tag=circle,tag=seeker] run particle minecraft:flame ~ ~-1 ~ 0 .7 0 .01 100 force
 tag @e[tag=circle,tag=seeker] remove circle
 
 # FLYING FOR THESE NEW PROJECTILES
