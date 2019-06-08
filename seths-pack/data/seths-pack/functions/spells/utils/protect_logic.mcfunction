@@ -12,7 +12,7 @@ execute as @e[tag=circle] at @s positioned ^ ^-4 ^2.5 if entity @e[distance=..1.
 
 # Trigger on jump, if holding wand
 execute at @a[scores={jump=1..}, nbt={SelectedItem:{tag:{display:{Name:'{"text":"Activator"}'}}}}] as @e[tag=circle,distance=..6,limit=1] run tag @s add seeker
-scoreboard players reset @a[scores={jump=1..}] jump
+# Reset score in gameloop
 
 # Vertical Particle
 execute as @e[tag=circle,tag=seeker] at @s run tp ^ ^-2 ^2.5
@@ -21,9 +21,13 @@ tag @e[tag=circle,tag=seeker] remove circle
 
 # FLYING FOR THESE NEW PROJECTILES
 
-# Move towards target (facing)
-execute as @e[tag=seeker] at @s anchored feet facing entity @e[tag=smitehim,distance=..30,sort=furthest] eyes if entity @e[tag=smitehim,distance=..30] run tp ^ ^ ^.3
-execute as @e[tag=seeker] at @s anchored feet facing entity @p eyes unless entity @e[tag=smitehim,distance=..30] run tp ^ ^-.2 ^-.3
+# Move towards target (facing) distance and speed is key difference to sam's defense
+
+# Protector logic for sam's defence
+execute as @e[tag=seeker,tag=protector] at @s anchored feet facing entity @e[tag=smitehim,distance=..100,sort=furthest] eyes if entity @e[tag=smitehim,distance=..100] run tp ^ ^ ^1
+
+execute as @e[tag=seeker,tag=!protector] at @s anchored feet facing entity @e[tag=smitehim,distance=..30,sort=furthest] eyes if entity @e[tag=smitehim,distance=..30] run tp ^ ^ ^.3
+execute as @e[tag=seeker,tag=!protector] at @s anchored feet facing entity @p eyes unless entity @e[tag=smitehim,distance=..30] run tp ^ ^-.09 ^-.3
 
 # Particles
 execute at @e[tag=seeker] run particle minecraft:flame ^ ^ ^ .1 .1 .1 .1 6 force
@@ -35,7 +39,11 @@ execute as @e[tag=seeker] at @s if entity @e[distance=..1.7,type=!minecraft:end_
 # Ending States
 execute as @e[tag=seeker] at @s if entity @e[distance=..1.7,type=!minecraft:armor_stand] run kill @s
 execute as @e[tag=seeker] at @s unless block ~ ~ ~ minecraft:air run kill @s
-execute as @e[tag=seeker] at @s unless entity @p[distance=..30] run kill @s
+
+# Protector specific version
+execute as @e[tag=seeker,tag=!protector] at @s unless entity @p[distance=..30] run kill @s
+execute as @e[tag=seeker,tag=protector] at @s unless entity @e[tag=smitehim,distance=..100] run kill @s
 
 # DEPRECATED SUMMONDER
-# execute at @e[type=minecraft:end_crystal,distance=..20] unless entity @e[distance=..30,tag=seeker] run summon minecraft:armor_stand ~ ~6 ~ {Tags:["seeker"],NoGravity:1,Invisible:0}
+# execute at @e[tag=tower] as @e[type=minecraft:end_crystal,distance=..10] unless entity @e[distance=..30,tag=protector] at @s run summon minecraft:armor_stand ~ ~5 ~ {Tags:["protector"],NoGravity:1,Invisible:1}
+# /summon minecraft:armor_stand ~ ~ ~ {Tags:["tower"],Invisible:1}

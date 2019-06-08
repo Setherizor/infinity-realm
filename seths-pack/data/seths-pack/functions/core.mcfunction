@@ -5,4 +5,5 @@
 #This file loads all of the 'core' function files for your datapack!
 
 function seths-pack:spells/utils/trigger
-function seths-pack:spells/utils/protect_logic
+execute if entity @e[tag=runprotect] run function seths-pack:spells/utils/protect_logic
+scoreboard players reset @a[scores={jump=1..}] jump
