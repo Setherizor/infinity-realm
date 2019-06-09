@@ -14,6 +14,7 @@ execute at @e[tag=scroll] run particle minecraft:enchanted_hit ~ ~.2 ~ .1 .1 .1 
 
 # Caster Tagging Logic (One Name for Each Spell) within 10 blocks
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"POOF\"}"}}}}] run tag @p[distance=..10] add caster
+execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"HOME\"}"}}}}] run tag @p[distance=..10] add caster
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"BOOM\"}"}}}}] run tag @p[distance=..10] add caster
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"CURSE\"}"}}}}] run tag @p[distance=..10] add caster
 execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"COLLECT\"}"}}}}] run tag @p[distance=..10] add caster
@@ -21,6 +22,8 @@ execute at @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"
 
 ## Spell Conditionals TODO: home,arrows
 execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"POOF\"}"}}}}] run schedule function seths-pack:spells/poof 2s
+
+execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"HOME\"}"}}}}] run schedule function seths-pack:spells/home 2s
 
 execute if entity @e[tag=scroll,tag=!queued,nbt={Item:{tag:{display:{Name:"{\"text\":\"BOOM\"}"}}}}] run schedule function seths-pack:spells/boom 2s
 
