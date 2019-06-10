@@ -9,6 +9,3 @@ execute as @e[tag=init] at @s facing entity @p feet run tp ~ ~ ~
 
 tag @e[tag=init] add stand
 tag @e[tag=init] remove init
-
-# Trigger Cleanup
-execute as @a[scores={shoot=1}] run scoreboard players set @s shoot 0

@@ -3,7 +3,10 @@
 # Projectile Trigger
 
 # Shoot when right click
-execute as @a[scores={shoot=1}] run function seths-pack:add-ons/projectile
+execute as @a[scores={shoot=1},nbt={SelectedItem:{tag:{display:{Name:'{"text":"Fireball Wand"}'}}}}] run function seths-pack:add-ons/projectile
+
+# Shoot Cleanup
+scoreboard players reset @a[scores={shoot=1..}] shoot
 
 # Movement while in air, or till hit thing or block
 execute as @e[tag=stand,tag=go,tag=!init] at @s run tp ^ ^ ^-.4
