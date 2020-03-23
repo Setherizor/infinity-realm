@@ -1,4 +1,4 @@
-# Seths Datapack for Minecraft 1.14.2 Java Edition
+# Seths Datapack for Minecraft 1.15.2 Java Edition
 
 # BOOM Spell
 

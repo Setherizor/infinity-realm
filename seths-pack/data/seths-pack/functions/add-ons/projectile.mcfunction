@@ -1,4 +1,4 @@
-# Seths Datapack for Minecraft 1.14.2 Java Edition
+# Seths Datapack for Minecraft 1.15.2 Java Edition
 
 # Research into fireballs
 execute at @a[scores={shoot=1}] run summon minecraft:armor_stand ~ ~-5 ~ {Small:1,Tags:["init","go"],CustomName:'{"text":"fireball"}',CustomNameVisible:0,Invisible:1,NoGravity:1b}
