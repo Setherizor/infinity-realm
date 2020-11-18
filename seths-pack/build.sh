@@ -1,2 +1,3 @@
 #! /bin/sh
-zip -r /home/seth/.minecraft/saves/SuperFlat/datapacks/seths-pack ./*
+PACKPATH=/home/seth/.local/share/multimc/instances/Realm2/minecraft/saves/Testing/datapacks/
+zip -r "$PACKPATH"/seths-pack ./*
